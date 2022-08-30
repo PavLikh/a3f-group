@@ -1,26 +1,26 @@
 @font-face {
     font-family: 'Cera Pro';
-    src: url('../fonts/CeraPro-Regular.woff2') format('woff2'),
-        url('../fonts/CeraPro-Regular.woff') format('woff'),
-        url('../fonts/CeraPro-Regular.ttf') format('truetype');
+    src: url(/fonts/CeraPro-Regular.woff2?98174a78a68fda76bc804e9965a6c8c1) format('woff2'),
+        url(/fonts/CeraPro-Regular.woff?c7da3a40565f40d48ea707271e3d3efb) format('woff'),
+        url(/fonts/CeraPro-Regular.ttf?1b7f7963cbafd9cc1e33c729ad90f4fb) format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Cera Pro Bold';
-    src: url('../fonts/CeraPro-Bold.woff2') format('woff2'),
-        url('../fonts/CeraPro-Bold.woff') format('woff'),
-        url('../fonts/CeraPro-Bold.ttf') format('truetype');
+    src: url(/fonts/CeraPro-Bold.woff2?b1c16c1f6b8d0ca8bef198b89e86f026) format('woff2'),
+        url(/fonts/CeraPro-Bold.woff?b7759d3a48655f563f3090a4c16b5368) format('woff'),
+        url(/fonts/CeraPro-Bold.ttf?9516746e439619b130312f0b9d778dc6) format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Cera Pro Black';
-    src: url('../fonts/CeraPro-Black.woff2') format('woff2'),
-        url('../fonts/CeraPro-Black.woff') format('woff'),
-        url('../fonts/CeraPro-Black.ttf') format('truetype');
+    src: url(/fonts/CeraPro-Black.woff2?afbc5d00e1521000a90d91714c3307f8) format('woff2'),
+        url(/fonts/CeraPro-Black.woff?a610304e061eca028690e462c7420aa3) format('woff'),
+        url(/fonts/CeraPro-Black.ttf?2ee7ece963cf5c2678401a7f336b5e71) format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -159,3 +159,4 @@ main {
         line-height: 140%;
     }
 }
+
