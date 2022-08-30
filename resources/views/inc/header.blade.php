@@ -3,7 +3,8 @@
     <img src="/images/logo.svg" width="99" height="80" alt="logo" class="logo">
 </a>
 <div class="info-header">(Тестовове задание)</div>
-<nav>
+<x-menu></x-menu>
+<!-- <nav>
     <ul>
         <li class="active">
             <a href="{{ route('task1') }}">БАЗА ДАННЫХ</a>
@@ -16,4 +17,4 @@
         </li>
     </ul>
 
-</nav>
+</nav> -->
