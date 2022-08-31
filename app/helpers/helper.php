@@ -38,7 +38,7 @@ if (! function_exists('ft_array_sort')) {
             if ($max > $arr[$n]){
                 array_swap($arr, $n);
             }
-            echo 'end ' . implode(", ", $arr) . "<br>";
+            // echo 'end ' . implode(", ", $arr) . "<br>";
             $n--;
         }
 	}
