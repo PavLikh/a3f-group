@@ -4,13 +4,42 @@ if (! function_exists('array_swap')) {
 	function array_swap (&$arr, $num)
 	{
 		$code = 0;
+        $temp = 0;
         if (isset($arr[$num])) {
-            array_unshift($arr, $arr[$num]);
-            $arr[$num + 1] = $arr[1];
-            unset($arr[1]);
+            $temp = $arr[0];
+            $arr[0] = $arr[$num];
+            $arr[$num] = $temp;
         } else {
-        	$code = 1;
+         $code = 1;
         }
 		return $code;
+	}
+}
+
+if (! function_exists('ft_array_sort')) {
+	function ft_array_sort (&$arr)
+	{
+        $n = count($arr) - 1;
+        while($n)
+        {
+            $max = 0;
+            $i = $n;
+            while ($i) {
+                if($max < $arr[$i]) {
+                    $max = $arr[$i];
+                    array_swap($arr, $i);
+                    $i = $n;
+                }
+                // printf('i = ' . $i . ' max = '. $max . ': ');
+                // echo implode(", ", $arr) . "<br>";
+                // printf("<br>");
+                $i--;
+            }
+            if ($max > $arr[$n]){
+                array_swap($arr, $n);
+            }
+            echo 'end ' . implode(", ", $arr) . "<br>";
+            $n--;
+        }
 	}
 }
