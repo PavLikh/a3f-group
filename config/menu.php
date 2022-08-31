@@ -6,11 +6,11 @@ return [
         'route' => 'task1',
     ],
     [
-        'title' => 'КОМАНДА',
+        'title' => 'СОРТИРОВКА',
         'route' => 'task2',
     ],
     [
-        'title' => 'КОНТАКТЫ',
+        'title' => 'ПАРСЕР',
         'route' => 'task3',
     ]
 ];

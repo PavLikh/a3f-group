@@ -11,4 +11,8 @@
 		<p>1.2. Написать запрос sql, отображающий все пары Контактов, которые дружат друг с другом. Исключить дубликаты.
 		(задача на sql запросы, использование PHP запрещено).</p>
 	</div>
+    <div>SELECT name FROM contact</div>
+    @foreach($data as $item)
+    <div>{{ $item->name }}</div>
+    @endforeach
 @endsection

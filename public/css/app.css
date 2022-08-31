@@ -131,7 +131,8 @@ main {
     }
 
     ul {
-        width: 265px;
+        /* width: 265px; */
+        width: 320px;
     }
 
     nav li a {
