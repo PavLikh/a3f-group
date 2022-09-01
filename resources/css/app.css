@@ -112,7 +112,8 @@ main {
 }
 
 .alert {
-    width: 250px;
+    /* width: 250px; */
+    width: 320px;
     background-color: FireBrick;
 }
 
@@ -199,6 +200,10 @@ main {
 
     .company-header {
         font-size: 24px;
+    }
+
+    .alert {
+        width: 250px;
     }
 
     .company-text {

@@ -25,7 +25,7 @@ class SecondRequest extends FormRequest
     {
         return [
             // 'length' => 'required|integer|size:100'
-            'length' => 'required|numeric|size:100'
+            'length' => 'required|numeric|max:100'
         ];
     }
 
@@ -34,7 +34,7 @@ class SecondRequest extends FormRequest
         return [
             'length.required' => 'Поле должно быть заполнено',
             'length.numeric' => 'Введите число',
-            'length.size' => 'Длина не должна превышать 100'
+            'length.max' => 'Длина не должна превышать 100'
         ];
     }
 }
