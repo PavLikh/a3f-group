@@ -30,15 +30,11 @@ if (! function_exists('ft_array_sort')) {
                     array_swap($arr, $i);
                     $i = $n;
                 }
-                // printf('i = ' . $i . ' max = '. $max . ': ');
-                // echo implode(", ", $arr) . "<br>";
-                // printf("<br>");
                 $i--;
             }
             if ($max > $arr[$n]){
                 array_swap($arr, $n);
             }
-            // echo 'end ' . implode(", ", $arr) . "<br>";
             $n--;
         }
 	}

@@ -65,15 +65,19 @@ header {
     font-size: 18px;
 }
 
-ul {
+nav ul {
     width: 380px;
     display: flex;
     justify-content: space-between;
     /*font-size: 16px;*/
 }
 
-nav li {
+li {
     list-style-type: none;
+}
+
+nav li {
+    /* list-style-type: none; */
     letter-spacing: 0.1em;
 }
 
@@ -107,6 +111,49 @@ main {
     line-height: 150%;
 }
 
+.alert {
+    width: 250px;
+    background-color: FireBrick;
+}
+
+.hr-horizontal-gradient {
+	height: 2px;
+	border: none;
+	background: linear-gradient(45deg, #8C8698, #180C31);
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	width: 100%;
+}
+
+.code {
+    border: 1px solid #8C8698;
+}
+
+.btn {
+    border: 1px solid #8C8698;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    border-radius: 0;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 1px solid #fff;
+}
+
+.form-control {
+    background-color: #8C8698;
+}
 
 @media (max-width: 1200px) and (min-width: 993px) {
     .company-text {
@@ -114,9 +161,9 @@ main {
     }
 }
 
-@media {max-width: 1200} {
+/* @media {max-width: 1200} {
 
-}
+} */
 
 @media (max-width: 992px) {
     #app {
