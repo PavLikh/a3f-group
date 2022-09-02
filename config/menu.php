@@ -7,7 +7,8 @@ return [
     ],
     [
         'title' => 'СОРТИРОВКА',
-        'route' => 'task2',
+        'route' => 'task2.index',
+        'routeIs' => 'task2.*',
     ],
     [
         'title' => 'ПАРСЕР',

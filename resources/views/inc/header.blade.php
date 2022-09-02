@@ -4,17 +4,3 @@
 </a>
 <div class="info-header">(Тестовове задание)</div>
 <x-menu></x-menu>
-<!-- <nav>
-    <ul>
-        <li class="active">
-            <a href="{{ route('task1') }}">БАЗА ДАННЫХ</a>
-        </li>
-        <li>
-            <a href="{{ route('task2') }}">КОМАНДА</a>
-        </li>
-        <li>
-            <a href="{{ route('task3') }}">КОНТАКТЫ</a>
-        </li>
-    </ul>
-
-</nav> -->

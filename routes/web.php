@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 // })->name('task1');
 
 Route::get('/', 'FirstTaskController@index')->name('task1');
-Route::get('/task2', 'SecondTaskController@index')->name('task2');
+Route::get('/task2', 'SecondTaskController@index')->name('task2.index');
 Route::post('/task2', 'SecondTaskController@sortArr')->name('task2.sortArr');
-
+// Route::post('/task2', [\App\Http\Controllers\SecondTaskController::class, 'sortArr'])->name('task2.sortArr');
 
 // Route::get('/task2', function () {
 //     return view('task2');

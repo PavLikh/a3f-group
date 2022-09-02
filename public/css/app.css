@@ -130,6 +130,7 @@ main {
 }
 
 .code {
+    width: 50%;
     border: 1px solid #8C8698;
 }
 
@@ -158,6 +159,10 @@ main {
 
 @media (max-width: 1200px) and (min-width: 993px) {
     .company-text {
+        width: 80%;
+    }
+
+    .code {
         width: 80%;
     }
 }
@@ -204,6 +209,10 @@ main {
 
     .alert {
         width: 250px;
+    }
+
+    .code {
+        width: 70%;
     }
 
     .company-text {
