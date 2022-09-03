@@ -37,17 +37,25 @@ ON contacts.id = `fr`.`contact_id</code>
             <div>{{ $item->id }}: {{ $item->name }} - {{ $item->fr_count }}</div>
             @endforeach
         </div>
-    <div class="company-text">
+        <div class="company-text">
         <br>
         <p>Запрос sql, отображающий все пары Контактов, которые дружат друг с другом, исключая дубликаты. Для этого будем генерировать промежуточную таблицу tab(contact_id, friend_id, couple_id) где будем хранить полные пары друзей, и в 3ий столбец будем помещать больший id из пары, и затем группировать по 3ему столбцу чтобы исключить дубликаты. На основе промежуточной таблицы будем получать имена из таблицы contacts</p>
     </div>
         <pre>
-            <code class="language-sql">SELECT con1.name AS name1, con2.name AS name2 FROM contacts con1, contacts con2 WHERE
-(con1.id, con2.id) IN
-(SELECT contact_id, friend_id FROM friends)
-
-
-SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
+            <code class="language-sql">SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
+        JOIN
+        (SELECT t2.contact_id, t2.friend_id,
+        IF(t1.contact_id > t1.friend_id, t1.contact_id, t1.friend_id) couple_id
+          FROM friends t1, friends t2
+          WHERE t1.contact_id=t2.friend_id AND t1.friend_id=t2.contact_id
+          GROUP BY couple_id) tab
+        ON con1.id=tab.contact_id AND con2.id=tab.friend_id</code>
+        </pre>
+    <div class="company-text">
+        <p>После выполнения данного запроса мы получим нужные данные, однако данный запрос не соответствует "strict mode" правилу ONLY_FULL_GROUP_BY. Чтобы не отключать данный режим исправим запрос, для этого при формировании промежуточной таблцы добавим еще один подзапрос</p>
+    </div>
+        <pre>
+            <code class="language-sql">SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
 JOIN
 (SELECT t3.contact_id, t3.friend_id, couple_id FROM
     (SELECT t2.contact_id, t2.friend_id,

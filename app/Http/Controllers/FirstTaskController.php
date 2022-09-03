@@ -41,42 +41,48 @@ class FirstTaskController extends Controller
         //    (SELECT contact_id, friend_id FROM friends)');
         //--------------------------
 
+        //-----|------------|-----------
+        // $coupleFriends = DB::select('SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
+        // JOIN
+        // (SELECT t3.contact_id, t3.friend_id, couple_id FROM
+        // (SELECT t2.contact_id, t2.friend_id,
+        //   CASE
+        //   WHEN t1.friend_id=t2.contact_id AND t1.contact_id=t2.friend_id THEN
+        //      IF(t1.contact_id > t1.friend_id, t1.contact_id, t1.friend_id)
+        //         ELSE -1
+        //   END couple_id
+        //  FROM (friends t1, friends t2)) t3
+        //     WHERE couple_id <> -1
+        //     GROUP BY couple_id) tab
+        // ON con1.id=tab.contact_id AND con2.id=tab.friend_id');
+        //-----^------------^-----------
+
+
+
+
+
+//if strict = false
         $coupleFriends = DB::select('SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
         JOIN
-        (SELECT t3.contact_id, t3.friend_id, couple_id FROM
-        (SELECT t2.contact_id, t2.friend_id,
-          CASE
-          WHEN t1.friend_id=t2.contact_id AND t1.contact_id=t2.friend_id THEN
-             IF(t1.contact_id > t1.friend_id, t1.contact_id, t1.friend_id)
-                ELSE -1
-          END couple_id
-         FROM (friends t1, friends t2)) t3
-            WHERE couple_id <> -1
-            GROUP BY couple_id) tab
+        (SELECT t2.contact_id, t2.friend_id, IF(t1.contact_id > t1.friend_id, t1.contact_id, t1.friend_id) couple_id
+          FROM friends t1, friends t2
+          WHERE t1.contact_id=t2.friend_id AND t1.friend_id=t2.contact_id
+          GROUP BY couple_id) tab
         ON con1.id=tab.contact_id AND con2.id=tab.friend_id');
 
+        // $coupleFriends = DB::select('SELECT t3.contact_id, t3.friend_id, couple_id FROM
+        // (SELECT t2.contact_id, t2.friend_id,
+        //   CASE
+        //   WHEN t1.friend_id=t2.contact_id AND t1.contact_id=t2.friend_id THEN
+        //      IF(t1.contact_id > t1.friend_id, t1.contact_id, t1.friend_id)
+        //         ELSE -1
+        //   END couple_id
+        //  FROM (friends t1, friends t2)) t3
+        //     WHERE couple_id <> -1
+        //     GROUP BY couple_id');
+
         // dd($coupleFriends);
 
-        // $coupleFriends = DB::table('contacts')
-        //     ->select('con1.name as name1', 'con1.name as name2')
-        //     ->from('contacts as con1')
-        //     ->whereIn(DB::raw('(con1.id, con1.id)'), function($query){
-        //         $query->select('contact_id', 'friend_id')
-        //         ->from('friends')
-        //         ->whereNotIn('friend_id', function($query1){
-        //             $query1->select('contact_id')->from('friends');
-        //         });
-        //     })
-        //     ->get();
-
-        //         $coupleFriends = DB::select('SELECT con1.name AS name1, con2.name AS name2 FROM contacts con1, contacts con2 WHERE
-//         (con1.id, con2.id) IN (SELECT contact_id, friend_id FROM friends WHERE friend_id NOT IN
-// (SELECT contact_id FROM friends))');
-
-
-        // ->get()->toArray();
-        // dd($coupleFriends);
-        // $a = array_swap();
         //-----------------
         // return view('task1', ['data' => $contacts]);
         //-----------------
