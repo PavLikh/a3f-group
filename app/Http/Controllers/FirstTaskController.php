@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Friend;
 use \DB;
 
 class FirstTaskController extends Controller
@@ -14,15 +15,20 @@ class FirstTaskController extends Controller
         // $contacts->select('name')
         // ->join();
 
-        $friendsId = DB::table('friends')
-            ->select('contact_id', DB::raw('COUNT(*) as fr_count'))
+        // $friendsId = new Friend;
+        // $friendsId = DB::table('friends')
+        $friendsId = Friend::select('contact_id', DB::raw('COUNT(*) as fr_count'))
+            // ->select('contact_id', DB::raw('COUNT(*) as fr_count'))
             ->groupBy('contact_id')
             ->having('fr_count', '>', 5);
             // ->get();
 
-        $contacts = DB::table('contacts')
-            ->joinSub($friendsId, 'friends', function ($join) {
+        // $contacts = DB::table('contacts')
+
+        $contacts = Contact::joinSub($friendsId, 'friends', function ($join) {
+            // ->joinSub($friendsId, 'friends', function ($join) {
                 $join->on('contacts.id', '=', 'contact_id');
+                // $join->on('id', '=', 'contact_id');
             })->get();
             // dd($friendsId);
 
