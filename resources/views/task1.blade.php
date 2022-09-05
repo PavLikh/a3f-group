@@ -51,7 +51,7 @@ ON contacts.id = `fr`.`contact_id</code>
         ON con1.id=tab.contact_id AND con2.id=tab.friend_id</code>
         </pre>
     <div class="company-text">
-        <p>После выполнения данного запроса мы получим нужные данные, однако данный запрос не соответствует "strict mode" правилу ONLY_FULL_GROUP_BY. Чтобы не отключать данный режим исправим запрос, для этого при формировании промежуточной таблцы добавим еще один подзапрос</p>
+        <p>После выполнения данного запроса мы получим нужные данные, однако данный запрос не соответствует "strict mode" правилу ONLY_FULL_GROUP_BY. Чтобы не отключать данный режим исправим запрос, для этого при формировании промежуточной таблицы добавим еще один подзапрос</p>
     </div>
         <pre>
             <code class="language-sql">SELECT con1.name AS name1, con2.name AS name2 FROM (contacts con1, contacts con2)
