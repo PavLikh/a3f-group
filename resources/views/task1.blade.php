@@ -19,7 +19,7 @@
     </div>
     <img src="/images/structure_db.jpg" alt="structure" class="">
     <br>
-    <img src="/images/structure_db.jpg" alt="structure" class="">
+    <img src="/images/friends_table.jpg" alt="structure" class="">
 
     <div class="company-text">
     <br>
