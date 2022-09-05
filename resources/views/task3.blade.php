@@ -14,7 +14,7 @@
         <hr class="hr-horizontal-gradient">
 	</div>
     <div class="company-text">
-        <p>Реализуем паттерн внедерение зависимости (DI). Laravel предоставляет инструмент для реализации данного паттерна - Service Container. Создадим ParseHtmlService и опишем в нем методы парсинга.</p>
+        <p>Реализуем паттерн внедерение зависимости (DI). Laravel предоставляет инструмент для реализации данного паттерна - Service Container. Создадим ParseHtmlService и опишем в нем методы парсера (упрощенно).</p>
     </div>
     <pre>
         <code class="language-php">class ParseHtmlService
@@ -120,7 +120,7 @@
 
 		    <div class="form-group">
 			    <label for="url">Введите url:</label>
-			    <input type="text" name="url" placeholder="100" id="url" class="form-control">
+			    <input type="text" name="url" placeholder="ya.ru" id="url" class="form-control">
 		    </div>
 		    <button type="submit" class="btn btn-success">Отправить</button>
 	    </form>
