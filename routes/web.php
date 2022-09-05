@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FirstTaskController@index')->name('task1');
+Route::get('/task2', 'SecondTaskController@index')->name('task2.index');
+Route::post('/task2', 'SecondTaskController@sortArr')->name('task2.sortArr');
+Route::get('/task3', 'ThirdTaskController@index')->name('task3.index');
+Route::post('/task3', 'ThirdTaskController@showHtmlTags')->name('task3.showHtmlTags');
