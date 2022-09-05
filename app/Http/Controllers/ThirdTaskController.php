@@ -17,10 +17,7 @@ class ThirdTaskController extends Controller
         $response = Http::get($req->input('url'));
         $html = $response->body();
         $data = $service->start($html, 'getTegs');
-        // dd($data);
 
-        // dd($req->input('url'));
-        // $response = Http::get($req);
         return view('task3')->withData($data);
     }
 }

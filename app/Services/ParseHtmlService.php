@@ -17,7 +17,6 @@ class ParseHtmlService
      */
     protected function getTegs(string $html)
     {
-        // $array = $this->getAllTags($html);
         $array = $this->countHtmlTegs($this->getAllTags($html));
         return $array;
     }
@@ -28,21 +27,14 @@ class ParseHtmlService
      */
     protected function countHtmlTegs(array $data)
     {
-        // printf('counyHtmlTegs:START<br>');
-        // foreach($data as $val) {
-        //     $val = implode('', $val);
-        // }
-        // dd($data);
         $array = [];
         $i = 0;
         while($i < count($data)) {
             $j = 0;
             foreach($array as $key => $val) {
-                // echo $data[$i] . ' - ' . $key .' => '. $val . '<br>';
                 if ($data[$i] == $key) {
                     $val++;
                     $array[$key]++;
-                    // echo $val . '<br>';
                     break;
                 }
                 $j++;
@@ -52,7 +44,6 @@ class ParseHtmlService
             }
             $i++;
         }
-        // dd($array);
         return $array;
     }
 
@@ -74,8 +65,6 @@ class ParseHtmlService
                     $i++;
                 }
                 $start = 1;
-                // $i++;
-                // echo 'asdasdasd<br>';
             }
             if($start == 1){
                 if($html[$i] != '>' && $html[$i] != ' '){
