@@ -12,6 +12,7 @@ return [
     ],
     [
         'title' => 'ПАРСЕР',
-        'route' => 'task3',
+        'route' => 'task3.index',
+        'routeIs' => 'task3.*',
     ]
 ];
