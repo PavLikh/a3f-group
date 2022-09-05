@@ -27,5 +27,13 @@
 		    <button type="submit" class="btn btn-success">Отправить</button>
 	    </form>
         <br>
+        @if($data)
+        <p>Исходный массив</p>
+        <div class="code">
+        @foreach($data as $key => $item)
+            <div>{{ $key }} - {{ $item }}</div>
+        @endforeach
+        </div>
+        @endif
     </div>
 @endsection

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\ThirdRequest;
+use App\Services\ParseHtmlService;
 
 class ThirdTaskController extends Controller
 {
     public function index() {
+
         $response = Http::get('http://my01.st/');
         $html = $response->body();
         // dd($response->body());
@@ -43,7 +45,14 @@ class ThirdTaskController extends Controller
         return view('task3');
     }
 
-    public function showHtmlTags(ThirdRequest $req) {
-        return view('task3');
+    public function showHtmlTags(ThirdRequest $req, ParseHtmlService $service) {
+        $response = Http::get($req->input('url'));
+        $html = $response->body();
+        $data = $service->start($html, 'getTegs');
+        // dd($data);
+
+        // dd($req->input('url'));
+        // $response = Http::get($req);
+        return view('task3')->withData($data);
     }
 }
