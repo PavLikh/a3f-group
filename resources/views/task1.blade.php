@@ -14,7 +14,6 @@
 	</div>
     <div class="company-text">
         <br>
-        <p>Так как мы рассмаотриваем упрощенную схему, без учета статусов запрос/подтверждение дружбы, то есть допускаем дружбу одного контакта с другим без подтверждения, для решения нам будет достаточно использовать структуру из 2х таблиц: contacts(id, name), friends(id, contact_id, friend_id), в одной будем хранить контакты, во второй пары контакт и все его друзья по id. Также во вторую таблицу добавим уникальный индекс(id контакта, id друга)</p>
         <p>Так как мы рассматриваем упрощенную теоретическую схему, для решения нам будет достаточно использовать структуру из 2х таблиц: contacts(id, name), friends(id, contact_id, friend_id), в одной будем хранить контакты, во второй пары контакт и все его друзья по id. Также во вторую таблицу добавим уникальный индекс(id контакта, id друга)</p>
         <br>
     </div>
@@ -76,7 +75,7 @@ ON con1.id=tab.contact_id AND con2.id=tab.friend_id</code>
         </div>
         <div class="company-text">
         <br>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente harum in praesentium vitae sint unde velit. Cum debitis nulla ipsam possimus dolorem, optio veritatis labore voluptas illum exercitationem corrupti earum!</p>
+        <p>Мы получили решение, однако для реальной задачи такая структура может быть не оптимальна. Лучше в таблице friends хранить статус состояния дружбы (1ый дружит со 2ым, 2ой дружит с 1ым, дружат вместе) и отслеживать корректность заполнения при добавлении данных в таблицу</p>
     </div>
 
 @endsection
