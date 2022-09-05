@@ -58,7 +58,6 @@ class ParseHtmlService
         $teg_nb = 0;
         $k = 0;
         $start = -1;
-        $end = -1;
         while($i < strlen($html)){
             if($html[$i] == '<' && ($html[$i+1] != ' ' && $html[$i+1] != '!' && $html[$i+1] != '/')){
                 if ($start < 0) {
