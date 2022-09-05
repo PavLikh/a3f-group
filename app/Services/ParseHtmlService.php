@@ -11,6 +11,10 @@ class ParseHtmlService
         }
     }
 
+    /**
+     * @param string $html
+     * @return array
+     */
     protected function getTegs(string $html)
     {
         // $array = $this->getAllTags($html);
@@ -18,9 +22,13 @@ class ParseHtmlService
         return $array;
     }
 
+    /**
+     * @param array $data
+     * @return array
+     */
     protected function countHtmlTegs(array $data)
     {
-        printf('counyHtmlTegs:START<br>');
+        // printf('counyHtmlTegs:START<br>');
         // foreach($data as $val) {
         //     $val = implode('', $val);
         // }
@@ -29,11 +37,6 @@ class ParseHtmlService
         $i = 0;
         while($i < count($data)) {
             $j = 0;
-            // echo $i . '<br>';
-            // while($j < count($data)) {
-            //     if($data[$i] == $array[$j])
-            //     $j++;
-            // }
             foreach($array as $key => $val) {
                 // echo $data[$i] . ' - ' . $key .' => '. $val . '<br>';
                 if ($data[$i] == $key) {
@@ -53,6 +56,10 @@ class ParseHtmlService
         return $array;
     }
 
+    /**
+     * @param string $html
+     * @return array
+     */
     protected function getAllTags(string $html)
     {
         $array = [];
