@@ -101,7 +101,7 @@
 }</code>
     </pre>
     <div class="company-text">
-        <p>Зарегистрируем связывание в соответствующем провайдере ParseHtmlServiceProvider, после чего сможем вызывать экзмепояры класса в контроллерах.</p>
+        <p>Зарегистрируем связывание в соответствующем провайдере ParseHtmlServiceProvider, после чего сможем вызывать экзмпляры класса в контроллерах.</p>
     </div>
     <pre>
         <code class="language-php">public function register()
